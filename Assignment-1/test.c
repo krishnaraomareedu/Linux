@@ -3,7 +3,7 @@
 #include "Bitmask.c"
 #include <stdio.h>
 int main() {
-  char s[]="Aparna";
+  char s[]="krishna";
   int prime=5,palindrome=151,fact=4,num=5,k=1;
   
 
