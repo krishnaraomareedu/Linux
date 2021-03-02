@@ -18,7 +18,8 @@ int is_Prime(int b)
    }
    return 1;
 }
-int is_palindrome(int n){
+int is_palindrome(int n)
+{
     int r,sum=0,temp;
     temp=n;
     while(n>0)    
