@@ -1,13 +1,13 @@
-#include "Myutils.h"
-int factorial(int m)
+#include "Utils.h"
+int factorial(int x)
 {
-  if (m == 0) 
+  if (x == 0) 
     return 1;
   else
-    return (m*factorial(m-1));
+    return (x*factorial(x-1));
 }
 
-int isPrime(int b)
+int is_Prime(int b)
 {
    int c;
  
@@ -18,9 +18,7 @@ int isPrime(int b)
    }
    return 1;
 }
- 
-
-int ispalindrome(int n){
+int is_palindrome(int n){
     int r,sum=0,temp;
     temp=n;
     while(n>0)    
