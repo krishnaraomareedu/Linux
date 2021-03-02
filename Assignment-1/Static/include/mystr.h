@@ -2,7 +2,7 @@
 #define __MYSTRING_H
 
 #include <cstring>
-#include <iostream>
+#include <stdio.h>
 
 int mystrlen(std::string str);
 std::string mystrcpy(std::string str1, std::string str2);
