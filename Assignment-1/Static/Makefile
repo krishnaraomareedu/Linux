@@ -11,11 +11,11 @@ all:sall.out
 sall.out:test.o libMystr.a libUtils.a libBit.a
 	gcc -L${LIBPATH} $< -o $@ ${LDFLAGS} -static
 
-libMystring.a:src/Mystr.o 
+libMystr.a:src/Mystr.o 
 	ar rc $@ $^
-libMyutils.a:src/Utils.o 
+libUtils.a:src/Utils.o 
 	ar rc $@ $^
-libBitmask.a:src/Bit.o 
+libBit.a:src/Bit.o 
 	ar rc $@ $^
 
 %.o:src/%.c inc/%.h
