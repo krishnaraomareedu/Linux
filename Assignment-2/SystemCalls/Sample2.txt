@@ -1,0 +1,1 @@
+(like cp command, which takes source, destination files as cmd line args)

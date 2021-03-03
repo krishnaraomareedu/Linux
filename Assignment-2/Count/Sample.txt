@@ -1,0 +1,2 @@
+## System Calls and Signals
+Write a program to count no.of lines, words, characters in given file (like wc command)
