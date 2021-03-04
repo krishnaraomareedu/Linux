@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <unistd.h>
 
-/* Function to find current time*/
+//Function to find current time
 void getTime();
 
 #endif

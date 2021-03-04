@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* Function for adding 1000 random numbers */
+//Function for Adding 1000 Random Numbers
 int sumof1000(); 
 
 #endif

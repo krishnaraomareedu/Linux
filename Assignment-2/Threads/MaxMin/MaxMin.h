@@ -5,9 +5,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* Finding maximum number in Array*/
+// maximum number in Array
 int findmax();
-/* Finding minimum number in Array */
+
+// minimum number in Array
 int findmin();
 
 #endif
