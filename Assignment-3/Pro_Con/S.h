@@ -1,5 +1,5 @@
-#ifndef __SHM_H
-#define __SHM_H
+#ifndef __S_H
+#define __S_H
 
 #include<unistd.h>
 #include<sys/mman.h>

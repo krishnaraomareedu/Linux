@@ -1,12 +1,12 @@
 #include "MaxMin.h"
-int Array[1000] = {0}, maxarr[10] = {0};
+int Array[1000] = {0}, maxarr[10] = {0},val=1000000;
 void *task_body_max(void *pv)
 {
   int i, thread_num = (__intptr_t)pv, tempmax = 0;  
-  for(i=0; i<100; ++i)
+  for(i=0; i<1000000; ++i)
   {
     //Searching maximum in 100 array values
-    
+
     if(Array[thread_num * 100 + i] > tempmax)
     {
       tempmax = Array[i];
