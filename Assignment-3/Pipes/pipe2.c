@@ -3,26 +3,28 @@
 void main() 
 {
     char str[256]="start"; 
-    int fifo_write,fifo_read; 
+    int fifo_w,fifo_r; 
     while(strcmp(str,"end")!=0)   
     {   
-        fifo_write= open("pipeA",O_WRONLY);   
-        if(fifo_write<0)     
+        fifo_w= open("pipeA",O_WRONLY);   
+        if(fifo_w<0)     
             printf("\nError opening pipe");   
         else     
         {     
             printf("chat2: ");     
             scanf("%s",str);     
-            write(fifo_write,str,255*sizeof(char));     
-            close(fifo_write);     
-        }   
-        fifo_read=open("pipeB",O_RDONLY);   
-        if(fifo_read<0)     
+            write(fifo_w,str,255*sizeof(char));     
+            close(fifo_w);     
+        }
+        
+        fifo_r=open("pipeB",O_RDONLY);
+
+        if(fifo_r<0)     
             printf("\nError opening write pipe");   
         else     
         {     
-            read(fifo_read,str,255*sizeof(char));     
-            close(fifo_read);     
+            read(fifo_r,str,255*sizeof(char));     
+            close(fifo_r);     
             printf("\n%s",str);     
         }   
     }

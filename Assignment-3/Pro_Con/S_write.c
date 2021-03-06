@@ -2,7 +2,7 @@
 
 int main()
 {
-	int filesz=4096; 
+	int f=4096; 
 	int fd,offset=0;
 	sem_t *ps,*qs;
 	ps=sem_open("/s1",O_CREAT, 0777, 1);
@@ -13,9 +13,9 @@ int main()
 		perror("open");
 		exit(1);
 	}
-    ftruncate(fd, filesz);
+    ftruncate(fd, f);
 	void *pbase;
-	pbase=mmap(0,filesz, PROT_WRITE, MAP_SHARED,fd,offset);
+	pbase=mmap(0,f, PROT_WRITE, MAP_SHARED,fd,offset);
 	if(pbase==MAP_FAILED)
 	{
 		fprintf(stderr,"mapping failed\n");
@@ -28,6 +28,6 @@ int main()
 	sem_post(ps);
 	sem_post(qs);
 	printf("buf=%s\n",str);
-	munmap(pbase,filesz);
+	munmap(pbase,f);
 	return 0;
 }

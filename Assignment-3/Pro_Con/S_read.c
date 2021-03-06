@@ -2,7 +2,7 @@
 
 int main()
 {
-	int filesz=4096; 
+	int f=4096; 
 	int fd,offset=0;
 	fd=shm_open("/shm1",O_CREAT|O_RDWR,0666);
 	if(fd<0)
@@ -10,9 +10,9 @@ int main()
 		perror("open");
 		exit(1);
 	}
-    ftruncate(fd, filesz);
+    ftruncate(fd, f);
 	void *pbase;
-	pbase=mmap(0,filesz, PROT_READ, MAP_SHARED,fd,offset);
+	pbase=mmap(0,f, PROT_READ, MAP_SHARED,fd,offset);
 	if(pbase==MAP_FAILED)
 	{
 		fprintf(stderr,"mapping failed\n");
@@ -31,7 +31,7 @@ int main()
 	 sem_post(ps);
 	sem_unlink("s1");
 	sem_unlink("s2");
-	munmap(pbase,filesz);
+	munmap(pbase,f);
 	return 0;
 }
 		
