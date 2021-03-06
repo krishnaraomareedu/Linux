@@ -8,6 +8,7 @@ void main()
         printf("\npipeA was not created");
     else
         printf("\npipeA created");
+        
     int f2;
     f2 = mkfifo("pipeB",0666);
     if(f2<0)
