@@ -3,11 +3,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-/*
-This program provides a possible solution for producer-consumer problem using mutex and semaphore.
-I have used 5 producers and 5 consumers to demonstrate the solution. You can always play with these values.
-*/
-
 #define MaxItems 5 // Maximum items a producer can produce or a consumer can consume
 #define BufferSize 5 // Size of the buffer
 
@@ -22,10 +17,10 @@ void *producer(void *pno)
     for(int i = 0; i < MaxItems; i++) {
         item = rand(); // Produce a random item
         pthread_mutex_lock(&mutex);
-        /* wait for space in buffer */
+        //wait for space in buffer
         while (((in + 1) % BufferSize) == out)
         {
-        /* put value item into the buffer */
+        //put value item into the buffer
            buffer[in] = item;
            printf("Producer %d: Insert Item %d at %d\n", *((int *)pno),buffer[in],in);
            in = (in + 1) % BufferSize;     
@@ -38,10 +33,10 @@ void *consumer(void *cno)
     int item=0;
     for(int i = 0; i < MaxItems; i++) {
         pthread_mutex_lock(&mutex);
-        /* wait for buffer to fill */
+        //wait for buffer to fill
         while (in == out) 
         {
-        /* take one unit of data from the buffer */
+        //take one unit of data from the buffer
            item = buffer[out];
            printf("Consumer %d: Remove Item %d from %d\n",*((int *)cno),item, out); 
            out = (out + 1) % BufferSize;     

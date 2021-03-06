@@ -7,7 +7,7 @@ int main()
 	struct mq_attr attr;
 	attr.mq_msgsize=256;
 	attr.mq_maxmsg=10;
-	/* Open a Message Queue in Server Process */
+	//Message Queue in Server Process
 	mqid3=mq_open("/mque1",O_WRONLY|O_CREAT,0666,&attr);
 	if(mqid3<0)
 	{
