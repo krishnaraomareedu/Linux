@@ -20,7 +20,8 @@ void *producer(void *pno)
     }
     else
     {
-     for(int i = 0; i < MaxItems; i++) {
+     for(int i = 0; i < MaxItems; i++) 
+     {
         item = rand(); // Produce a random item
         pthread_mutex_lock(&mutex);
         //put value item into the buffer
@@ -40,7 +41,8 @@ void *consumer(void *cno)
     else
     {
      int item=0;
-     for(int i = 0; i < MaxItems; i++) {
+     for(int i = 0; i < MaxItems; i++) 
+     {
         pthread_mutex_lock(&mutex);
         //take one unit of data from the buffer
         item = buffer[out];
@@ -59,17 +61,21 @@ int main()
 
     int a[5] = {1,2,3,4,5}; //Just used for numbering the producer and consumer
 
-    for(int i = 0; i < 5; i++) {
+    for(int i = 0; i < 5; i++) 
+    {
         pthread_create(&pro[i], NULL, (void *)producer, (void *)&a[i]);
     }
-    for(int i = 0; i < 5; i++) {
+    for(int i = 0; i < 5; i++) 
+    {
         pthread_create(&con[i], NULL, (void *)consumer, (void *)&a[i]);
     }
 
-    for(int i = 0; i < 5; i++) {
+    for(int i = 0; i < 5; i++) 
+    {
         pthread_join(pro[i], NULL);
     }
-    for(int i = 0; i < 5; i++) {
+    for(int i = 0; i < 5; i++) 
+    {
         pthread_join(con[i], NULL);
     }
 
